@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will Barbershop</title>
+
+  <!-- Fontes: serifada elegante para o logotipo + sans para o resto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <header class="hero">
+    <div class="hero__ring hero__ring--one"></div>
+    <div class="hero__ring hero__ring--two"></div>
+
+    <div class="hero__content">
+      <h1 class="hero__logo">Will</h1>
+      <div class="hero__divider"></div>
+      <p class="hero__subtitle">Barbershop</p>
+    </div>
+  </header>
+
+  <!-- ===== VÍDEO ===== -->
+  <section class="showcase">
+    <div class="showcase__frame">
+      <video
+        class="showcase__video"
+        controls
+        poster="video/capa.jpg"
+        preload="metadata">
+        <source src="video/barbearia.mp4" type="video/mp4">
+        Seu navegador não suporta a exibição deste vídeo.
+      </video>
+    </div>
+  </section>
+
+  <!-- ===== AGENDAMENTO ===== -->
+  <section class="booking">
+    <h2 class="booking__title">Agende seu horário<br>com rapidez e facilidade</h2>
+
+    <div class="booking__actions">
+      <a href="#" class="btn btn--solid">Agendar pelo iPhone</a>
+      <a href="#" class="btn btn--outline">Agendar pelo Android</a>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+/* 
+   WILL BARBERSHOP — tokens
+   Preto + prata (filigrana do logo) + vermelho (barber pole)
+    */
+:root {
+  --preto: #0a0a0a;
+  --preto-suave: #161616;
+  --prata: #c7c7c7;
+  --prata-claro: #e9e9e9;
+  --vermelho: #b3242f;
+  --branco: #f5f5f5;
+  --laranja: #e08a1e;
+  --texto-escuro: #1a1408;
+
+  --fonte-titulo: "Playfair Display", serif;
+  --fonte-base: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--preto);
+  font-family: var(--fonte-base);
+  color: var(--branco);
+}
+
+/* 
+   LOGO (com fundo de madeira apenas nesta seção)
+    */
+.logo {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+
+  background-image:
+    linear-gradient(180deg, rgba(10, 10, 10, 0.55) 0%, rgba(10, 10, 10, 0.75) 100%),
+    url("Imagens/fundo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.logo__img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6));
+}
+
+/* 
+   VÍDEO + FOTO
+    */
+.video {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2.5rem 1.5rem 3.5rem;
+  background-color: var(--preto);
+}
+
+.video__frame {
+  flex: 1 1 320px;
+  max-width: 420px;
+  border: 1px solid rgba(199, 199, 199, 0.35);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--preto-suave);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+.video__media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background-color: #000;
+}
+
+/*  
+   AGENDAMENTO
+   */
+.agendamento {
+  background-color: var(--preto);
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.agendamento__wpp {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--laranja);
+  border-radius: 14px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.agendamento__wpp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 46px rgba(0, 0, 0, 0.6);
+}
+
+.titulo-do-agendamento {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4.5vw, 2rem);
+  color: var(--texto-escuro);
+  letter-spacing: 0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+.titulo-do-agendamento::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 2px;
+  background-color: var(--texto-escuro);
+  opacity: 0.6;
+  margin: 0.9rem auto 0;
+}
+
+/* 
+   REDES SOCIAIS
+    */
+.redes-sociais {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 2.5rem 1.5rem;
+  background-color: var(--preto);
+}
+
+.social__link {
+  display: inline-flex;
+  transition: transform 0.2s ease;
+}
+
+.social__link:hover {
+  transform: translateY(-3px);
+}
+
+.social-insta,
+.social-wpp {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* 
+   BOTÃO FLUTUANTE WHATSAPP
+    */
+.whats-float {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.whats-float:hover {
+  transform: scale(1.08);
+}
+
+.whats-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 
+   RESPONSIVO
+    */
+@media (max-width: 480px) {
+  .video {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video__frame {
+    width: 100%;
+  }
+}
+/* ==========================================================
+   WILL BARBERSHOP — Seção de Serviços / Agendamento
+   Variáveis e classes em português para facilitar a edição.
+   ========================================================== */
+
+:root {
+  --cor-fundo: #0c0c0d;
+  --cor-fundo-cartao: #161617;
+  --cor-borda: #2a2a2c;
+  --cor-borda-destaque: #d68a2c;
+  --cor-texto-principal: #f1efe9;
+  --cor-texto-secundario: #9a9a9f;
+  --cor-laranja: #e0a039;
+  --cor-laranja-escuro: #b8791f;
+  --fonte-titulo: 'Playfair Display', Georgia, serif;
+  --fonte-texto: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --raio-cartao: 10px;
+  --raio-icone: 10px;
+}
+
+.secao-servicos {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-principal);
+  font-family: var(--fonte-texto);
+  padding: 5rem 1.5rem;
+}
+
+/* ---------- cabeçalho ---------- */
+
+.servicos-cabecalho {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+
+.servicos-titulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 2.75rem;
+  color: var(--cor-laranja);
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.5px;
+}
+
+.servicos-subtitulo {
+  color: var(--cor-texto-secundario);
+  font-size: 1.05rem;
+  margin: 0 0 1.4rem;
+}
+
+.servicos-linha {
+  display: inline-block;
+  width: 64px;
+  height: 3px;
+  background-color: var(--cor-laranja);
+  border-radius: 2px;
+}
+
+/* ---------- grupos (Corte/Barba, Químicas) ---------- */
+
+.servicos-grupo {
+  max-width: 1040px;
+  margin: 0 auto 2.5rem;
+}
+
+.servicos-subtitulo-grupo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.7rem;
+  color: var(--cor-texto-principal);
+  margin: 0 auto 1.5rem;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.servicos-subtitulo-grupo::before,
+.servicos-subtitulo-grupo::after {
+  content: "";
+  height: 2px;
+  width: 40px;
+  background-color: var(--cor-laranja);
+  flex-shrink: 0;
+}
+/* ---------- grade de cartões ---------- */
+
+.servicos-grade {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 720px) {
+  .servicos-grade {
+    grid-template-columns: 1fr;
+  }
+  .servicos-titulo {
+    font-size: 2.1rem;
+  }
+}
+
+/* ---------- cartão de serviço ---------- */
+
+.cartao-servico {
+  background-color: var(--cor-fundo-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-cartao);
+  padding: 1.5rem 1.6rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cartao-servico:hover,
+.cartao-servico:focus-within {
+  border-color: var(--cor-borda-destaque);
+  transform: translateY(-2px);
+}
+
+/* leve destaque alternado, como no combo "Corte + Barba" da referência */
+.cartao-destaque {
+  border-color: var(--cor-laranja-escuro);
+}
+
+.cartao-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.icone-servico {
+  flex-shrink: 0;
+  width: 94px;
+  height: 94px;
+  border-radius: var(--raio-icone);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone-servico img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icone-servico svg {
+  width: 22px;
+  height: 22px;
+}
+
+.servico-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.15rem;
+  color: var(--cor-texto-principal);
+}
+
+.servico-preco {
+  color: var(--cor-laranja);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.servico-descricao {
+  color: var(--cor-texto-secundario);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0 0 1.1rem;
+}
+
+/* ---------- botão agendar agora ---------- */
+
+.botao-agendar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--cor-laranja);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.botao-agendar:hover,
+.botao-agendar:focus-visible {
+  color: #f2b657;
+  border-bottom-color: currentColor;
+}
+
+.icone-agendar {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- acessibilidade ---------- */
+
+.botao-agendar:focus-visible,
+.cartao-servico:focus-within {
+  outline: 2px solid var(--cor-laranja);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cartao-servico,
+  .botao-agendar {
+    transition: none;
+  }
+}
